@@ -1,0 +1,29 @@
+PODS:
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
+  - SearchTextField (1.2.1)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - GooglePlaces
+  - SearchTextField
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - GoogleMaps
+    - GooglePlaces
+    - SearchTextField
+
+SPEC CHECKSUMS:
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  SearchTextField: 261b0febd49194492f29555fff3c5c0019ca84d2
+
+PODFILE CHECKSUM: ef57a6854627ea605d7cf0cf96e4d5828bfbe3c3
+
+COCOAPODS: 1.5.3

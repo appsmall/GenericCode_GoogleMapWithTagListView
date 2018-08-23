@@ -1,0 +1,6 @@
+framework module Pods_IntegrateGoogleMapWithTagList {
+  umbrella header "Pods-IntegrateGoogleMapWithTagList-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LYr-0I-u08">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HomeVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="IntegrateGoogleMapWithTagList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PaD-zj-j5i">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <segue destination="t4a-eN-XcP" kind="embed" identifier="homeVCToMapVC" id="Hn1-QO-lwf"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZg-Nt-Th2" userLabel="Search View" customClass="RoundCornerView" customModule="IntegrateGoogleMapWithTagList" customModuleProvider="target">
+                                <rect key="frame" x="20" y="70" width="335" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_search" translatesAutoresizingMaskIntoConstraints="NO" id="wj3-RP-sPQ">
+                                        <rect key="frame" x="8" y="7.5" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wj3-RP-sPQ" secondAttribute="height" multiplier="1:1" id="0mL-uF-4Sl"/>
+                                            <constraint firstAttribute="height" constant="35" id="RbC-x0-fSe"/>
+                                        </constraints>
+                                    </imageView>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9z2-86-qu0">
+                                        <rect key="frame" x="51" y="2.5" width="276" height="45"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEy-2y-YZ5">
+                                                <rect key="frame" x="0.0" y="0.0" width="230" height="45"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap to choose category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pWL-Jv-Tig" customClass="SearchTextField" customModule="SearchTextField">
+                                                        <rect key="frame" x="0.0" y="4.5" width="200" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="ZwD-4I-kNB"/>
+                                                            <constraint firstAttribute="width" constant="200" id="sFq-XL-37d"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="PEq-SO-qnC"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="230" id="NhX-5L-LKf"/>
+                                                    <constraint firstItem="pWL-Jv-Tig" firstAttribute="leading" secondItem="uEy-2y-YZ5" secondAttribute="leading" id="ZzQ-9w-GMV"/>
+                                                    <constraint firstItem="pWL-Jv-Tig" firstAttribute="centerY" secondItem="uEy-2y-YZ5" secondAttribute="centerY" id="g47-Zn-wE0"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="uEy-2y-YZ5" secondAttribute="trailing" id="14L-Qh-jXj"/>
+                                            <constraint firstItem="uEy-2y-YZ5" firstAttribute="top" secondItem="9z2-86-qu0" secondAttribute="top" id="1b2-Lr-nRU"/>
+                                            <constraint firstItem="uEy-2y-YZ5" firstAttribute="height" secondItem="9z2-86-qu0" secondAttribute="height" id="7Cq-3R-tCg"/>
+                                            <constraint firstAttribute="height" constant="45" id="XUr-wC-ruT"/>
+                                            <constraint firstItem="uEy-2y-YZ5" firstAttribute="leading" secondItem="9z2-86-qu0" secondAttribute="leading" id="aFj-8a-FPJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="uEy-2y-YZ5" secondAttribute="bottom" id="jew-1o-xUS"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.85316599150000005" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9z2-86-qu0" secondAttribute="trailing" constant="8" id="0hO-Nn-jn7"/>
+                                    <constraint firstItem="9z2-86-qu0" firstAttribute="leading" secondItem="wj3-RP-sPQ" secondAttribute="trailing" constant="8" id="MiH-lN-o1d"/>
+                                    <constraint firstItem="wj3-RP-sPQ" firstAttribute="leading" secondItem="DZg-Nt-Th2" secondAttribute="leading" constant="8" id="OB1-R4-tws"/>
+                                    <constraint firstAttribute="height" constant="50" id="YHW-2b-6IA"/>
+                                    <constraint firstItem="wj3-RP-sPQ" firstAttribute="centerY" secondItem="DZg-Nt-Th2" secondAttribute="centerY" id="jOq-cB-dKW"/>
+                                    <constraint firstItem="9z2-86-qu0" firstAttribute="centerY" secondItem="DZg-Nt-Th2" secondAttribute="centerY" id="l6t-31-s3o"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qw3-ZZ-ZGJ" userLabel="LocationButton View" customClass="RoundCornerView" customModule="IntegrateGoogleMapWithTagList" customModuleProvider="target">
+                                <rect key="frame" x="304" y="592" width="55" height="55"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_location_enabled" translatesAutoresizingMaskIntoConstraints="NO" id="ATl-cH-Ucg">
+                                        <rect key="frame" x="8" y="8" width="39" height="39"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qw3-ZZ-ZGJ" secondAttribute="height" multiplier="1:1" id="MCs-6i-CSZ"/>
+                                    <constraint firstAttribute="height" constant="55" id="Mcg-m0-NRa"/>
+                                    <constraint firstAttribute="trailing" secondItem="ATl-cH-Ucg" secondAttribute="trailing" constant="8" id="VmW-OU-cKt"/>
+                                    <constraint firstItem="ATl-cH-Ucg" firstAttribute="top" secondItem="Qw3-ZZ-ZGJ" secondAttribute="top" constant="8" id="bhy-Gd-Oes"/>
+                                    <constraint firstAttribute="bottom" secondItem="ATl-cH-Ucg" secondAttribute="bottom" constant="8" id="iiO-sV-4FJ"/>
+                                    <constraint firstItem="ATl-cH-Ucg" firstAttribute="leading" secondItem="Qw3-ZZ-ZGJ" secondAttribute="leading" constant="8" id="xk0-8l-Qh8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="x5B-FM-AGi" appends="YES" id="JuW-Wl-da2"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PaD-zj-j5i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5q6-rO-UGW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PaD-zj-j5i" secondAttribute="bottom" id="Dpn-BF-NVX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qw3-ZZ-ZGJ" secondAttribute="trailing" constant="16" id="EUK-ri-DJj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qw3-ZZ-ZGJ" secondAttribute="bottom" constant="20" id="T3f-K0-qoU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PaD-zj-j5i" secondAttribute="trailing" id="XdO-iB-qKR"/>
+                            <constraint firstItem="DZg-Nt-Th2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dNt-5i-ueT"/>
+                            <constraint firstItem="PaD-zj-j5i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lfy-iw-rx3"/>
+                            <constraint firstItem="DZg-Nt-Th2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="oyN-L2-Pkl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DZg-Nt-Th2" secondAttribute="trailing" constant="20" id="ztf-A1-In2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gkY-Ov-cXN"/>
+                    <connections>
+                        <outlet property="contentView" destination="uEy-2y-YZ5" id="SZc-5A-dNI"/>
+                        <outlet property="contentViewWidthConstraint" destination="NhX-5L-LKf" id="fuL-QM-1AA"/>
+                        <outlet property="searchTextField" destination="pWL-Jv-Tig" id="zFD-iT-j6f"/>
+                        <outlet property="searchTextFieldLeadingConstraint" destination="ZzQ-9w-GMV" id="Obb-Hl-RxA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="x5B-FM-AGi">
+                    <connections>
+                        <action selector="userLocationButtonPressed:" destination="BYZ-38-t0r" id="Ug1-zv-QWC"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1376.8" y="81.409295352323838"/>
+        </scene>
+        <!--MapVC-->
+        <scene sceneID="O3e-lj-fH3">
+            <objects>
+                <viewController id="t4a-eN-XcP" customClass="MapVC" customModule="IntegrateGoogleMapWithTagList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zAl-QG-ZLG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fak-ER-nPu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Znm-pg-aGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2159" y="90"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i7e-b3-Pgi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="LYr-0I-u08" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pBr-Pm-KQM">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dMZ-4z-bBx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Om-Na-FEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="81"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_location_enabled" width="32" height="32"/>
+        <image name="ic_search" width="50" height="50"/>
+    </resources>
+</document>
